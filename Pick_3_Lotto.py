@@ -14,6 +14,7 @@ def fireball_check(fireball,picked,wining_numbers) :
     temp1 = sorted([fireball,picked[1],picked[2]])
     temp2 = sorted([fireball,picked[0],picked[2]])
     temp3 = sorted([fireball,picked[0],picked[1]])
+    #checks to see if the fireball would make the numbers a match
     if(temp1 == wining_numbers) :
         count += 1
     if(temp2 == wining_numbers) :
@@ -22,6 +23,7 @@ def fireball_check(fireball,picked,wining_numbers) :
         count += 1
     return count
 
+fireball_wining = 0
 fireball_flag = input("do you want to play fireball? (enter y/n) ")
 
 list = sorted(random.sample(range(0, 10), 3))
@@ -49,25 +51,21 @@ if(fireball_flag == "y") :
     fireball_wining = fireball_check(fireball,numbers,list)
     
 flag = check(numbers,list)
-
+# checks the lotto result
 if ((flag == True) and fireball_wining > 0) :
-    print("\nyou won and firball bonus")
+    print("\nyou won $100 dollar cash prize and firball won too so an extra $50 times ",fireball_wining)
 elif ((flag == False) and fireball_wining > 0) :
-    print("\nyou lost but since you had fireball you win")
+    print("\nyou lost but since you had fireball you win $50 times ",fireball_wining)
 elif (flag == True) :
-    print("\nyou win")
+    print("\nyou win $100 dollar cash prize will be sent your way soon")
 elif (flag == False) :
-    print("\nyou lose")
+    print("\nNice try, better luck next time ")
     
 
-def check (picked) :
-    list = sorted(random.sample(range(0, 10), 3))
-    print(list)
-    if(list == picked) :
-        win_or_lose = True
-    elif(list != picked) :
-        win_or_lose = False
-    return win_or_lose;
+print("\nThe wining numbers were: ",end =" ")
+print(list)
+print("\nThe Fireball number was: ",end =" ")
+print(fireball)
 
 
 print (" ")
