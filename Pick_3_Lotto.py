@@ -30,7 +30,7 @@ list = sorted(random.sample(range(0, 10), 3))
 fireball = random.randint(0,10)
 
 #this is used to check the program is working
-print(list,fireball);
+#print(list,fireball);
 
 while(True) :
     print("Plese enter your 3 numbers sperated by a space")
